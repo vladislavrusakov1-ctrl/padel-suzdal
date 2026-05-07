@@ -4,50 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Padel Camp Suzdal — падел-кэмп в Суздале</title>
-  <meta name="description" content="Падел-кэмп в Суздале с 28 июня по 3 июля: тренировки, турниры, SPA, питание, проживание и экскурсия." />
+  <meta name="description" content="Падел-кэмп в Суздале с 28 июня по 3 июля: тренировки, турниры, SPA, питание по системе шведский стол, проживание и экскурсия." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0f1714;
-      --bg-soft: #17231f;
-      --card: #1d2b26;
-      --accent: #c8ff5f;
-      --accent-2: #e8d8b5;
-      --text: #f4f1e8;
-      --muted: #b6beb7;
-      --line: rgba(255,255,255,.12);
-      --white: #fff;
-      --black: #000;
-      --radius: 28px;
-      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --bg: #f7f1e6;
+      --bg-soft: #fff9ef;
+      --card: #ffffff;
+      --green: #a9e84f;
+      --green-dark: #31513a;
+      --deep: #18382c;
+      --text: #15231d;
+      --muted: #65736b;
+      --sand: #e8d8b5;
+      --line: rgba(24,56,44,.14);
+      --radius: 30px;
+      --shadow: 0 24px 70px rgba(36, 57, 45, .16);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Inter, Arial, sans-serif;
+      font-family: "Montserrat", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(1160px, calc(100% - 32px));
@@ -65,112 +56,115 @@
     .nav {
       width: min(1160px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 14px 18px;
-      border: 1px solid var(--line);
+      padding: 10px 18px 10px 22px;
+      border: 1px solid rgba(255,255,255,.6);
       border-radius: 999px;
-      background: rgba(15,23,20,.72);
+      background: rgba(255, 249, 239, .78);
       backdrop-filter: blur(18px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
+      box-shadow: 0 12px 40px rgba(24,56,44,.08);
     }
 
-    .logo {
-      font-weight: 900;
-      letter-spacing: .04em;
-      font-size: 15px;
-      text-transform: uppercase;
+    .logo-img {
+      width: 200px;
+      height: 50px;
+      object-fit: contain;
+      display: block;
     }
 
     .nav-links {
       display: flex;
       gap: 22px;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 700;
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--deep); }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       border: 0;
       border-radius: 999px;
-      padding: 14px 22px;
+      padding: 15px 24px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 14px;
       font-weight: 800;
+      letter-spacing: .01em;
       cursor: pointer;
       transition: .25s ease;
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #111;
+      background: var(--green);
+      color: #142018;
+      box-shadow: 0 12px 28px rgba(169,232,79,.28);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(200,255,95,.25);
+      box-shadow: 0 16px 34px rgba(169,232,79,.38);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,.1);
-      color: var(--text);
+      background: rgba(255,255,255,.7);
+      color: var(--deep);
       border: 1px solid var(--line);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,.16);
     }
 
     .hero {
       min-height: 100vh;
-      padding: 150px 0 70px;
-      position: relative;
-      overflow: hidden;
+      padding: 150px 0 72px;
       background:
-        linear-gradient(180deg, rgba(15,23,20,.25), var(--bg) 92%),
-        linear-gradient(90deg, rgba(15,23,20,.92), rgba(15,23,20,.25)),
+        linear-gradient(180deg, rgba(247,241,230,.2), var(--bg) 95%),
+        linear-gradient(90deg, rgba(247,241,230,.94), rgba(247,241,230,.52), rgba(247,241,230,.18)),
         url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: 1.05fr .95fr;
       gap: 48px;
       align-items: end;
     }
 
     .badge {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
+      padding: 16px 22px;
       border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.08);
-      color: var(--accent-2);
-      font-size: 14px;
-      margin-bottom: 22px;
+      border: 1px solid rgba(49,81,58,.18);
+      background: rgba(255,255,255,.72);
+      color: var(--deep);
+      font-size: clamp(18px, 2.1vw, 28px);
+      font-weight: 900;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(24,56,44,.08);
+    }
+
+    h1, h2 {
+      font-family: "Inter", Arial, sans-serif;
+      letter-spacing: -.06em;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 92px);
+      font-size: clamp(46px, 7vw, 96px);
       line-height: .92;
-      letter-spacing: -.06em;
       max-width: 860px;
       margin-bottom: 24px;
+      color: var(--deep);
     }
 
     .hero-text {
       max-width: 640px;
-      color: var(--muted);
+      color: #405148;
       font-size: 20px;
+      font-weight: 600;
       margin-bottom: 32px;
     }
 
@@ -185,32 +179,36 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      max-width: 660px;
+      max-width: 760px;
     }
 
     .stat {
-      padding: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.07);
-      border-radius: 22px;
+      padding: 20px;
+      border: 1px solid rgba(49,81,58,.13);
+      background: rgba(255,255,255,.74);
+      border-radius: 24px;
+      box-shadow: 0 14px 34px rgba(24,56,44,.08);
     }
 
     .stat strong {
       display: block;
-      font-size: 24px;
-      color: var(--accent);
+      font-size: 23px;
+      color: var(--deep);
+      font-weight: 900;
+      margin-bottom: 4px;
     }
 
     .stat span {
       color: var(--muted);
       font-size: 13px;
+      font-weight: 700;
     }
 
     .hero-card {
       border-radius: var(--radius);
       overflow: hidden;
-      background: rgba(255,255,255,.08);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.7);
       box-shadow: var(--shadow);
     }
 
@@ -220,22 +218,11 @@
       object-fit: cover;
     }
 
-    .hero-card-content {
-      padding: 24px;
-    }
+    .hero-card-content { padding: 26px; }
+    .hero-card-content h3 { font-size: 24px; margin-bottom: 8px; color: var(--deep); }
+    .hero-card-content p { color: var(--muted); font-weight: 600; }
 
-    .hero-card-content h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .hero-card-content p {
-      color: var(--muted);
-    }
-
-    section {
-      padding: 92px 0;
-    }
+    section { padding: 92px 0; }
 
     .section-head {
       display: flex;
@@ -246,7 +233,7 @@
     }
 
     .eyebrow {
-      color: var(--accent);
+      color: var(--green-dark);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: .12em;
@@ -255,16 +242,17 @@
     }
 
     h2 {
-      font-size: clamp(32px, 4vw, 58px);
+      font-size: clamp(34px, 4vw, 60px);
       line-height: 1;
-      letter-spacing: -.04em;
-      max-width: 800px;
+      max-width: 820px;
+      color: var(--deep);
     }
 
     .section-text {
-      max-width: 450px;
+      max-width: 470px;
       color: var(--muted);
       font-size: 17px;
+      font-weight: 600;
     }
 
     .features {
@@ -274,40 +262,62 @@
     }
 
     .feature {
-      min-height: 230px;
+      min-height: 260px;
       padding: 26px;
-      background: var(--card);
-      border: 1px solid var(--line);
       border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      color: #fff;
+      box-shadow: var(--shadow);
+      background-size: cover;
+      background-position: center;
     }
 
-    .feature-icon {
-      font-size: 34px;
-      margin-bottom: 18px;
+    .feature::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.72));
+      z-index: 0;
     }
+
+    .feature > * { position: relative; z-index: 1; }
+
+    .feature-icon { font-size: 34px; margin-bottom: 16px; }
 
     .feature h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: 23px;
+      margin-bottom: 9px;
+      color: #fff;
     }
 
     .feature p {
-      color: var(--muted);
+      color: rgba(255,255,255,.86);
+      font-weight: 600;
     }
+
+    .f1 { background-image: url("https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=900&q=80"); }
+    .f2 { background-image: url("https://images.unsplash.com/photo-1526234362653-3b75a0c07438?auto=format&fit=crop&w=900&q=80"); }
+    .f3 { background-image: url("https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"); }
+    .f4 { background-image: url("https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80"); }
+    .f5 { background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"); }
+    .f6 { background-image: url("https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80"); }
 
     .split {
       display: grid;
       grid-template-columns: .95fr 1.05fr;
-      gap: 18px;
+      gap: 20px;
       align-items: stretch;
     }
 
     .photo-card {
       border-radius: var(--radius);
       overflow: hidden;
-      min-height: 520px;
-      border: 1px solid var(--line);
-      background: var(--card);
+      min-height: 560px;
+      box-shadow: var(--shadow);
     }
 
     .photo-card img {
@@ -316,29 +326,29 @@
       object-fit: cover;
     }
 
-    .program {
-      display: grid;
-      gap: 12px;
-    }
+    .program { display: grid; gap: 12px; }
 
     .day {
-      padding: 22px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.06);
+      padding: 24px;
+      border-radius: 26px;
+      border: 1px solid rgba(49,81,58,.12);
+      background: rgba(255,255,255,.72);
       display: grid;
       grid-template-columns: 150px 1fr;
       gap: 18px;
+      box-shadow: 0 14px 34px rgba(24,56,44,.07);
     }
 
     .day strong {
-      color: var(--accent-2);
+      color: var(--deep);
       font-size: 18px;
+      font-weight: 900;
     }
 
     .day ul {
       color: var(--muted);
       padding-left: 18px;
+      font-weight: 600;
     }
 
     .gallery {
@@ -352,13 +362,11 @@
       width: 100%;
       object-fit: cover;
       border-radius: 24px;
-      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(24,56,44,.08);
     }
 
     .gallery img:nth-child(1),
-    .gallery img:nth-child(6) {
-      grid-column: span 2;
-    }
+    .gallery img:nth-child(6) { grid-column: span 2; }
 
     .pricing {
       display: grid;
@@ -369,36 +377,35 @@
     .price-card {
       padding: 34px;
       border-radius: var(--radius);
-      background: var(--card);
-      border: 1px solid var(--line);
-      position: relative;
-      overflow: hidden;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(49,81,58,.12);
+      box-shadow: var(--shadow);
     }
 
     .price-card.highlight {
-      background:
-        linear-gradient(135deg, rgba(200,255,95,.16), rgba(255,255,255,.04)),
-        var(--card);
-      border-color: rgba(200,255,95,.38);
+      background: linear-gradient(135deg, rgba(169,232,79,.28), rgba(255,255,255,.82));
+      border-color: rgba(49,81,58,.18);
     }
 
     .price-card h3 {
       font-size: 28px;
       margin-bottom: 10px;
+      color: var(--deep);
     }
 
     .price {
       font-size: 44px;
       line-height: 1;
       font-weight: 900;
-      letter-spacing: -.04em;
-      color: var(--accent);
+      color: var(--green-dark);
       margin: 22px 0 8px;
+      letter-spacing: -.04em;
     }
 
     .price-note {
       color: var(--muted);
       margin-bottom: 24px;
+      font-weight: 600;
     }
 
     .price-card ul {
@@ -407,11 +414,12 @@
       color: var(--muted);
       margin-bottom: 28px;
       list-style: none;
+      font-weight: 600;
     }
 
     .price-card li::before {
       content: "✓";
-      color: var(--accent);
+      color: var(--green-dark);
       font-weight: 900;
       margin-right: 10px;
     }
@@ -426,15 +434,17 @@
     .included-item {
       padding: 18px;
       border-radius: 22px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(49,81,58,.12);
       color: var(--muted);
+      font-weight: 600;
     }
 
     .included-item strong {
       display: block;
-      color: var(--text);
+      color: var(--deep);
       margin-bottom: 4px;
+      font-weight: 900;
     }
 
     .faq {
@@ -446,56 +456,79 @@
     details {
       padding: 22px;
       border-radius: 22px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(49,81,58,.12);
+      box-shadow: 0 14px 34px rgba(24,56,44,.07);
     }
 
     summary {
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 18px;
+      color: var(--deep);
     }
 
     details p {
       color: var(--muted);
       margin-top: 12px;
+      font-weight: 600;
     }
 
     .cta {
       padding: 70px;
       border-radius: 38px;
       background:
-        linear-gradient(135deg, rgba(200,255,95,.2), rgba(232,216,181,.1)),
+        linear-gradient(90deg, rgba(24,56,44,.84), rgba(24,56,44,.42)),
         url("https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-      position: relative;
       overflow: hidden;
-      isolation: isolate;
+      box-shadow: var(--shadow);
     }
 
-    .cta::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(15,23,20,.72);
-      z-index: -1;
-    }
-
-    .cta h2 {
-      max-width: 760px;
-      margin-bottom: 18px;
-    }
-
+    .cta h2 { color: #fff; margin-bottom: 18px; }
     .cta p {
-      color: var(--muted);
+      color: rgba(255,255,255,.84);
       max-width: 640px;
       font-size: 18px;
+      font-weight: 600;
       margin-bottom: 28px;
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 120;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(0,0,0,.22);
+      animation: pulse 1.8s infinite;
+    }
+
+    .float-tg { background: #229ED9; }
+    .float-max { background: #31513a; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,158,217,.35); }
+      70% { transform: scale(1.04); box-shadow: 0 0 0 14px rgba(34,158,217,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,158,217,0); }
     }
 
     .footer {
       padding: 34px 0 50px;
       color: var(--muted);
       border-top: 1px solid var(--line);
+      font-weight: 600;
     }
 
     .footer-row {
@@ -505,91 +538,47 @@
       flex-wrap: wrap;
     }
 
-    .mobile-menu {
-      display: none;
-    }
-
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
+      .nav-links { display: none; }
+      .logo-img { width: 170px; height: 43px; }
 
       .hero-grid,
       .split,
       .pricing,
-      .faq {
-        grid-template-columns: 1fr;
-      }
+      .faq { grid-template-columns: 1fr; }
 
-      .hero-card img {
-        height: 320px;
-      }
-
-      .features {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .included {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
-      }
+      .hero-card img { height: 320px; }
+      .features { grid-template-columns: 1fr 1fr; }
+      .included { grid-template-columns: 1fr 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
 
       .gallery img,
       .gallery img:nth-child(1),
-      .gallery img:nth-child(6) {
-        grid-column: span 1;
-      }
+      .gallery img:nth-child(6) { grid-column: span 1; }
 
-      .section-head {
-        display: block;
-      }
-
-      .section-text {
-        margin-top: 14px;
-      }
+      .section-head { display: block; }
+      .section-text { margin-top: 14px; }
     }
 
     @media (max-width: 560px) {
-      .container {
-        width: min(100% - 22px, 1160px);
-      }
+      .container, .nav { width: min(100% - 22px, 1160px); }
 
-      .nav {
-        width: min(100% - 22px, 1160px);
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
+      .btn { width: 100%; }
+      .hero { padding-top: 125px; }
 
       .hero-stats,
       .features,
       .included,
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+      .gallery { grid-template-columns: 1fr; }
 
-      .day {
-        grid-template-columns: 1fr;
-      }
+      .day { grid-template-columns: 1fr; }
+      .photo-card { min-height: 320px; }
+      .cta { padding: 34px 22px; }
+      .price { font-size: 36px; }
 
-      .photo-card {
-        min-height: 320px;
-      }
-
-      .cta {
-        padding: 34px 22px;
-      }
-
-      .price {
-        font-size: 36px;
+      .floating-contact {
+        right: 12px;
+        bottom: 12px;
       }
     }
   </style>
@@ -598,7 +587,17 @@
 <body>
   <header class="header">
     <nav class="nav">
-      <a href="#" class="logo">Padel Camp Suzdal</a>
+      <a href="#">
+        <img class="logo-img" alt="Padel Camp Suzdal" src='data:image/svg+xml;utf8,
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+          <rect width="400" height="100" rx="24" fill="%23fff9ef"/>
+          <circle cx="54" cy="50" r="25" fill="%23a9e84f"/>
+          <path d="M44 61 C51 42 61 35 70 40" stroke="%2318382c" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <circle cx="64" cy="36" r="5" fill="%2318382c"/>
+          <text x="95" y="45" font-family="Arial" font-size="29" font-weight="900" fill="%2318382c">PADEL CAMP</text>
+          <text x="97" y="72" font-family="Arial" font-size="24" font-weight="700" fill="%2331513a">SUZDAL</text>
+        </svg>' />
+      </a>
 
       <div class="nav-links">
         <a href="#about">О кэмпе</a>
@@ -621,8 +620,8 @@
           <h1>Падел-кэмп в Суздале</h1>
 
           <p class="hero-text">
-            5 дней падела, тренировок с тренером, вечерних игр, SPA-программ,
-            питания, проживания и красивого отдыха в атмосфере Суздаля.
+            5 дней падела, тренировок с тренером, вечерних матчей, SPA-программ,
+            питания по системе шведский стол, проживания и отдыха в атмосфере Суздаля.
           </p>
 
           <div class="hero-actions">
@@ -636,12 +635,12 @@
               <span>с 28 июня по 3 июля</span>
             </div>
             <div class="stat">
-              <strong>каждый день</strong>
-              <span>тренировка + игра</span>
+              <strong>шведский стол</strong>
+              <span>3-разовое питание</span>
             </div>
             <div class="stat">
-              <strong>от 99 000 ₽</strong>
-              <span>проживание в 2-местном номере</span>
+              <strong>SPA + экскурсия</strong>
+              <span>входят в стоимость</span>
             </div>
           </div>
         </div>
@@ -649,10 +648,10 @@
         <div class="hero-card">
           <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80" alt="Падел корт" />
           <div class="hero-card-content">
-            <h3>Спорт + отдых + комьюнити</h3>
+            <h3>Спорт, отдых и комьюнити</h3>
             <p>
               Формат для тех, кто хочет прокачать игру, отдохнуть от города
-              и провести несколько дней в хорошей компании.
+              и провести несколько насыщенных дней в хорошей компании.
             </p>
           </div>
         </div>
@@ -667,46 +666,46 @@
             <h2>Кэмп, где падел — часть полноценного отдыха</h2>
           </div>
           <p class="section-text">
-            Не просто турнир на пару часов, а полноценная поездка: тренировки,
-            игры, восстановление, экскурсия и проживание на территории SPA-отеля.
+            Не просто турнир, а полноценная поездка: тренировки, игры, восстановление,
+            питание, экскурсия и проживание на территории SPA-отеля.
           </p>
         </div>
 
         <div class="features">
-          <div class="feature">
+          <div class="feature f1">
             <div class="feature-icon">🎾</div>
             <h3>Тренировки с тренером</h3>
-            <p>Каждый день — занятие с тренером, работа над техникой, тактикой и игровыми ситуациями.</p>
+            <p>Каждый день — занятие с тренером: техника, тактика, игровые связки и работа над ошибками.</p>
           </div>
 
-          <div class="feature">
+          <div class="feature f2">
             <div class="feature-icon">🏆</div>
             <h3>Игры и турнир</h3>
-            <p>Вечером — игра, матчевые форматы и турнирная сетка для практики после тренировок.</p>
+            <p>Вечером — матчевые форматы, смена пар, соревновательный вайб и финальные игры.</p>
           </div>
 
-          <div class="feature">
+          <div class="feature f3">
             <div class="feature-icon">🧖</div>
-            <h3>SPA-программы</h3>
+            <h3>SPA-комплекс</h3>
             <p>SPA-программы входят в стоимость, чтобы восстановиться после активных игровых дней.</p>
           </div>
 
-          <div class="feature">
+          <div class="feature f4">
             <div class="feature-icon">🍽️</div>
-            <h3>3-разовое питание</h3>
-            <p>Завтраки, обеды и ужины уже включены в пакет участия.</p>
+            <h3>Шведский стол</h3>
+            <p>3-разовое питание по системе шведский стол уже включено в пакет участия.</p>
           </div>
 
-          <div class="feature">
+          <div class="feature f5">
             <div class="feature-icon">🏡</div>
             <h3>Проживание</h3>
-            <p>Размещение на территории SPA-отеля: двухместное или индивидуальное проживание.</p>
+            <p>Размещение на территории SPA-отеля: двухместный номер или индивидуальное проживание.</p>
           </div>
 
-          <div class="feature">
+          <div class="feature f6">
             <div class="feature-icon">🚌</div>
             <h3>Экскурсия по Суздалю</h3>
-            <p>Обзорная автобусная экскурсия по одному из самых красивых городов России.</p>
+            <p>Обзорная автобусная экскурсия: город, история, красивые виды и фото-точки.</p>
           </div>
         </div>
       </div>
@@ -720,47 +719,59 @@
 
         <div>
           <div class="eyebrow">Программа</div>
-          <h2>Каждый день: тренировка, игра и восстановление</h2>
+          <h2>5 дней игры, восстановления и красивого отдыха</h2>
           <p class="section-text" style="margin: 18px 0 28px;">
-            Программа может немного корректироваться по погоде, уровню группы и расписанию отеля.
+            Каждый день построен так, чтобы было достаточно спорта, отдыха и живого общения.
           </p>
 
           <div class="program">
             <div class="day">
               <strong>День 1</strong>
               <ul>
-                <li>Заезд и размещение</li>
-                <li>Знакомство участников</li>
-                <li>Вводная тренировка</li>
-                <li>Welcome dinner</li>
+                <li>Заезд и размещение в SPA-отеле</li>
+                <li>Знакомство участников и распределение по уровню</li>
+                <li>Лёгкая вводная тренировка</li>
+                <li>Welcome-ужин и разбор формата кэмпа</li>
               </ul>
             </div>
 
             <div class="day">
-              <strong>Дни 2–4</strong>
+              <strong>День 2</strong>
               <ul>
-                <li>Утренняя или дневная тренировка с тренером</li>
-                <li>3-разовое питание</li>
-                <li>SPA-программы и свободное время</li>
-                <li>Вечерние игры / турнир</li>
+                <li>Тренировка с тренером: техника, контроль мяча, позиция на корте</li>
+                <li>Свободное время и SPA-комплекс</li>
+                <li>Вечерние игры в парах</li>
+                <li>Мини-разбор матчей и игровых ошибок</li>
               </ul>
             </div>
 
             <div class="day">
-              <strong>Экскурсия</strong>
+              <strong>День 3</strong>
               <ul>
+                <li>Утренняя тренировка: тактика, свечи, выход к сетке</li>
                 <li>Обзорная автобусная экскурсия по Суздалю</li>
-                <li>Исторический центр, красивые виды и фото-точки</li>
+                <li>Фото-прогулка и свободное время</li>
+                <li>Вечерний игровой блок</li>
               </ul>
             </div>
 
             <div class="day">
-              <strong>Финал</strong>
+              <strong>День 4</strong>
+              <ul>
+                <li>Тренировка: командное взаимодействие и игровые сценарии</li>
+                <li>SPA, восстановление и отдых на территории отеля</li>
+                <li>Основной турнирный вечер</li>
+                <li>Матчи за выход в финальный день</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>День 5</strong>
               <ul>
                 <li>Финальные матчи</li>
-                <li>Подведение итогов</li>
-                <li>Награждение</li>
-                <li>Выезд</li>
+                <li>Награждение и общие фото</li>
+                <li>Финальный обед</li>
+                <li>Выезд участников</li>
               </ul>
             </div>
           </div>
@@ -776,8 +787,8 @@
             <h2>Территория SPA-отеля в Суздале</h2>
           </div>
           <p class="section-text">
-            Удобный формат: живёте, питаетесь, отдыхаете и восстанавливаетесь в одной локации.
-            Трансфер до Суздаля не входит в стоимость.
+            Удобный формат: живёте, питаетесь по системе шведский стол,
+            отдыхаете, восстанавливаетесь и проводите кэмп в одной локации.
           </p>
         </div>
 
@@ -812,7 +823,7 @@
 
             <ul>
               <li>Проживание</li>
-              <li>3-разовое питание</li>
+              <li>3-разовое питание по системе шведский стол</li>
               <li>Ежедневные тренировки с тренером</li>
               <li>Вечерние игры и турнир</li>
               <li>SPA-программы</li>
@@ -824,12 +835,12 @@
 
           <div class="price-card">
             <h3>Индивидуальное размещение</h3>
-            <div class="price">120 000 ₽</div>
+            <div class="price">119 000 ₽</div>
             <p class="price-note">за участника при отдельном проживании</p>
 
             <ul>
               <li>Отдельный номер</li>
-              <li>3-разовое питание</li>
+              <li>3-разовое питание по системе шведский стол</li>
               <li>Ежедневные тренировки с тренером</li>
               <li>Вечерние игры и турнир</li>
               <li>SPA-программы</li>
@@ -847,15 +858,15 @@
           </div>
           <div class="included-item">
             <strong>Входит</strong>
-            питание 3 раза в день
+            питание по системе шведский стол
           </div>
           <div class="included-item">
             <strong>Входит</strong>
-            SPA-программы
+            SPA-комплекс
           </div>
           <div class="included-item">
-            <strong>Не входит</strong>
-            трансфер
+            <strong>Входит</strong>
+            экскурсия по Суздалю
           </div>
         </div>
       </div>
@@ -882,23 +893,23 @@
           </details>
 
           <details>
-            <summary>Трансфер входит?</summary>
-            <p>Нет, трансфер до Суздаля не входит в стоимость. Участники добираются самостоятельно.</p>
-          </details>
-
-          <details>
             <summary>Можно взять семью?</summary>
             <p>Да. Подселение жены, родственников или детей обсуждается индивидуально по стоимости и условиям отеля.</p>
           </details>
 
           <details>
             <summary>Что входит в стоимость?</summary>
-            <p>Проживание, 3-разовое питание, тренировки, игры/турнир, SPA-программы и обзорная экскурсия по Суздалю.</p>
+            <p>Проживание, 3-разовое питание по системе шведский стол, тренировки, игры/турнир, SPA-программы и обзорная экскурсия по Суздалю.</p>
           </details>
 
           <details>
             <summary>Когда проходит кэмп?</summary>
             <p>Даты проведения: с 28 июня по 3 июля.</p>
+          </details>
+
+          <details>
+            <summary>Будет ли турнир?</summary>
+            <p>Да. Помимо тренировок будут вечерние игры, турнирные блоки и финальные матчи.</p>
           </details>
         </div>
       </div>
@@ -915,12 +926,17 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://t.me/USERNAME" target="_blank">Написать в Telegram</a>
-            <a class="btn btn-secondary" href="https://wa.me/79999999999" target="_blank">Написать в WhatsApp</a>
+            <a class="btn btn-secondary" href="https://max.ru/USERNAME" target="_blank">Написать в Max</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="floating-contact">
+    <a class="float-btn float-tg" href="https://t.me/USERNAME" target="_blank" aria-label="Telegram">TG</a>
+    <a class="float-btn float-max" href="https://max.ru/USERNAME" target="_blank" aria-label="Max">MAX</a>
+  </div>
 
   <footer class="footer">
     <div class="container footer-row">
