@@ -16,7 +16,6 @@
     :root {
       --bg: #f6f0e5;
       --bg-soft: #fff9ef;
-      --card: #ffffff;
       --green: #b7ef56;
       --green-dark: #274235;
       --text: #17251f;
@@ -67,23 +66,23 @@
     }
 
     .nav {
-      width: min(980px, calc(100% - 32px));
+      width: min(860px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 10px 16px;
-      background: rgba(255,255,255,.78);
+      padding: 9px 14px;
+      background: rgba(255,255,255,.8);
       backdrop-filter: blur(20px);
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.72);
       display: grid;
-      grid-template-columns: 210px 1fr 170px;
+      grid-template-columns: 170px 1fr 145px;
       align-items: center;
-      gap: 20px;
+      gap: 14px;
       box-shadow: 0 12px 40px rgba(0,0,0,.06);
     }
 
     .logo-img {
-      width: 200px;
-      height: 50px;
+      width: 165px;
+      height: 42px;
       object-fit: contain;
       display: block;
     }
@@ -91,12 +90,12 @@
     .nav-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 13px;
       font-family: "Inter", sans-serif;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 900;
       color: var(--muted);
-      letter-spacing: .07em;
+      letter-spacing: .05em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -109,17 +108,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 24px;
+      padding: 14px 22px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
       font-family: "Inter", sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
-      letter-spacing: .05em;
+      letter-spacing: .04em;
       text-transform: uppercase;
       transition: .25s ease;
       white-space: nowrap;
+    }
+
+    .nav .btn {
+      padding: 13px 16px;
+      font-size: 11px;
     }
 
     .btn-primary {
@@ -140,7 +144,7 @@
 
     .hero {
       min-height: 100vh;
-      padding: 150px 0 80px;
+      padding: 145px 0 80px;
       background:
         linear-gradient(180deg, rgba(246,240,229,.2), var(--bg) 95%),
         linear-gradient(90deg, rgba(246,240,229,.95), rgba(246,240,229,.55), rgba(246,240,229,.2)),
@@ -149,44 +153,65 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 48px;
-      align-items: end;
+      grid-template-columns: 1fr .86fr;
+      gap: 34px;
+      align-items: center;
     }
 
     .badge {
       display: inline-flex;
-      align-items: center;
-      padding: 20px 26px;
-      border-radius: 30px;
+      flex-direction: column;
+      padding: 15px 20px 13px;
+      border-radius: 24px;
       border: 1px solid rgba(49,81,58,.18);
       background: rgba(255,255,255,.84);
       color: var(--green-dark);
       margin-bottom: 24px;
       box-shadow: 0 12px 30px rgba(24,56,44,.08);
-      max-width: 100%;
+      max-width: 650px;
+      overflow: hidden;
     }
 
     .badge-big {
       font-family: "Inter", sans-serif;
-      font-size: clamp(30px, 4vw, 56px);
+      font-size: clamp(26px, 3.2vw, 44px);
       line-height: .95;
       font-weight: 900;
-      letter-spacing: .055em;
+      letter-spacing: .04em;
       margin-bottom: 10px;
       color: var(--green-dark);
       white-space: nowrap;
     }
 
-    .badge-small {
+    .ticker {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      width: max-content;
+      animation: ticker 24s linear infinite;
+    }
+
+    .ticker span {
       font-family: "Inter", sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 900;
       color: var(--muted);
       letter-spacing: .055em;
       text-transform: uppercase;
-      line-height: 1.45;
-      white-space: nowrap;
+      padding-right: 34px;
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     h1, h2, h3 {
@@ -206,13 +231,11 @@
     }
 
     .hero-text {
-      font-family: "Inter", sans-serif;
       font-size: 20px;
       max-width: 620px;
       color: #44534b;
-      font-weight: 800;
+      font-weight: 600;
       margin-bottom: 34px;
-      letter-spacing: -.01em;
     }
 
     .hero-actions {
@@ -254,12 +277,10 @@
     }
 
     .stat span {
-      font-family: "Inter", sans-serif;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.25;
-      font-weight: 800;
-      letter-spacing: .02em;
+      font-weight: 700;
     }
 
     .hero-card {
@@ -267,11 +288,14 @@
       border-radius: var(--radius);
       background: #fff;
       box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 430px;
+      justify-self: end;
     }
 
     .hero-card img {
       width: 100%;
-      height: 430px;
+      height: 410px;
       object-fit: cover;
     }
 
@@ -288,9 +312,8 @@
     }
 
     .hero-card-content p {
-      font-family: "Inter", sans-serif;
       color: var(--muted);
-      font-weight: 800;
+      font-weight: 600;
     }
 
     section {
@@ -453,6 +476,56 @@
     .gallery img:nth-child(1),
     .gallery img:nth-child(6) {
       grid-column: span 2;
+    }
+
+    .excursion-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+      background: rgba(255,255,255,.76);
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .excursion-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .excursion-content {
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .excursion-content h2 {
+      margin-bottom: 20px;
+    }
+
+    .excursion-content p {
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .excursion-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .excursion-list div {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(183,239,86,.18);
     }
 
     .pricing {
@@ -639,23 +712,18 @@
 
     @media (max-width: 1080px) {
       .nav {
-        width: min(920px, calc(100% - 32px));
-        grid-template-columns: 190px 1fr 160px;
-        gap: 14px;
+        width: min(820px, calc(100% - 32px));
+        grid-template-columns: 160px 1fr 140px;
+        gap: 10px;
       }
 
       .logo-img {
-        width: 180px;
-        height: 46px;
+        width: 155px;
       }
 
       .nav-links {
-        gap: 14px;
-        font-size: 11px;
-      }
-
-      .badge-small {
-        white-space: normal;
+        gap: 10px;
+        font-size: 9px;
       }
     }
 
@@ -672,8 +740,14 @@
       .hero-grid,
       .split,
       .pricing,
-      .faq {
+      .faq,
+      .excursion-card {
         grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        justify-self: start;
+        max-width: 100%;
       }
 
       .features {
@@ -718,13 +792,13 @@
       }
 
       .logo-img {
-        width: 150px;
+        width: 145px;
         height: 38px;
       }
 
       .nav .btn {
         padding: 12px 14px;
-        font-size: 11px;
+        font-size: 10px;
       }
 
       .hero {
@@ -744,22 +818,25 @@
 
       .badge {
         width: 100%;
+        padding: 14px 16px 12px;
       }
 
       .badge-big {
-        font-size: 28px;
-        letter-spacing: .035em;
-        white-space: nowrap;
+        font-size: 26px;
+        letter-spacing: .02em;
       }
 
-      .badge-small {
+      .ticker span {
         font-size: 10px;
-        letter-spacing: .045em;
-        white-space: normal;
       }
 
-      .photo-card {
+      .photo-card,
+      .excursion-photo img {
         min-height: 320px;
+      }
+
+      .excursion-content {
+        padding: 28px;
       }
 
       .cta {
@@ -790,6 +867,7 @@
         <a href="#about">О кэмпе</a>
         <a href="#program">Программа</a>
         <a href="#hotel">Отель</a>
+        <a href="#excursion">Экскурсия</a>
         <a href="#price">Стоимость</a>
       </div>
 
@@ -805,10 +883,12 @@
       <div class="container hero-grid">
         <div>
           <div class="badge">
-            <div>
-              <div class="badge-big">28 июня — 3 июля</div>
-              <div class="badge-small">
-                Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу
+            <div class="badge-big">28 июня — 3 июля</div>
+
+            <div class="ticker">
+              <div class="ticker-track">
+                <span>Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу</span>
+                <span>Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу</span>
               </div>
             </div>
           </div>
@@ -1011,6 +1091,33 @@
           <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80" alt="Питание">
           <img src="https://images.unsplash.com/photo-1526234362653-3b75a0c07438?auto=format&fit=crop&w=900&q=80" alt="Падел">
           <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=900&q=80" alt="Падел корт">
+        </div>
+      </div>
+    </section>
+
+    <section id="excursion">
+      <div class="container">
+        <div class="excursion-card">
+          <div class="excursion-photo">
+            <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1200&q=80" alt="Экскурсия по Суздалю">
+          </div>
+
+          <div class="excursion-content">
+            <div class="eyebrow">Экскурсия</div>
+            <h2>Обзорная экскурсия по Суздалю</h2>
+
+            <p>
+              В программу входит автобусная обзорная экскурсия по городу.
+              Это отдельный день для атмосферы, прогулок, фото и знакомства с историческим центром.
+            </p>
+
+            <div class="excursion-list">
+              <div>🚌 Автобусный формат</div>
+              <div>🏛️ Главные исторические места</div>
+              <div>📸 Фото-точки и красивые виды</div>
+              <div>🎾 После экскурсии — вечерний игровой блок</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
