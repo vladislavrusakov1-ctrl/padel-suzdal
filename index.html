@@ -49,7 +49,7 @@
     }
 
     .nav{
-      width:min(980px,calc(100% - 32px));
+      width:min(1030px,calc(100% - 32px));
       margin:0 auto;
       padding:10px 18px;
       background:rgba(255,255,255,.82);
@@ -72,12 +72,12 @@
     .nav-links{
       display:flex;
       justify-content:center;
-      gap:18px;
+      gap:14px;
       font-family:"Inter",sans-serif;
-      font-size:12px;
+      font-size:11px;
       font-weight:900;
       color:var(--muted);
-      letter-spacing:.05em;
+      letter-spacing:.04em;
       text-transform:uppercase;
       white-space:nowrap;
     }
@@ -399,6 +399,30 @@
       grid-column:span 2;
     }
 
+    .padel-gallery{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .padel-gallery img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      border-radius:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .padel-gallery img:nth-child(1){
+      grid-column:span 2;
+      grid-row:span 2;
+      height:574px;
+    }
+
+    .padel-gallery img:nth-child(4){
+      grid-column:span 2;
+    }
+
     .excursion-card{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -502,31 +526,6 @@
       font-weight:900;
     }
 
-    .included{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .included-item{
-      padding:18px;
-      border-radius:22px;
-      background:rgba(255,255,255,.7);
-      border:1px solid rgba(49,81,58,.12);
-      color:var(--muted);
-      font-weight:600;
-      box-shadow:0 12px 34px rgba(0,0,0,.05);
-    }
-
-    .included-item strong{
-      display:block;
-      color:var(--green-dark);
-      margin-bottom:4px;
-      font-family:"Inter",sans-serif;
-      font-weight:900;
-    }
-
     .faq{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -626,13 +625,13 @@
 
     @media(max-width:1080px){
       .nav{
-        width:min(920px,calc(100% - 32px));
+        width:min(960px,calc(100% - 32px));
         grid-template-columns:170px 1fr 170px;
         gap:12px;
       }
 
       .logo-img{width:165px;}
-      .nav-links{gap:12px;font-size:10px;}
+      .nav-links{gap:9px;font-size:9px;}
     }
 
     @media(max-width:900px){
@@ -663,13 +662,18 @@
       }
 
       .features{grid-template-columns:1fr 1fr;}
-      .included{grid-template-columns:1fr 1fr;}
       .gallery{grid-template-columns:1fr 1fr;}
+      .padel-gallery{grid-template-columns:1fr 1fr;}
 
       .gallery img,
       .gallery img:nth-child(1),
-      .gallery img:nth-child(6){
+      .gallery img:nth-child(6),
+      .padel-gallery img,
+      .padel-gallery img:nth-child(1),
+      .padel-gallery img:nth-child(4){
         grid-column:span 1;
+        grid-row:span 1;
+        height:260px;
       }
 
       .section-head{display:block;}
@@ -698,8 +702,8 @@
       .btn{width:100%;}
 
       .features,
-      .included,
-      .gallery{
+      .gallery,
+      .padel-gallery{
         grid-template-columns:1fr;
       }
 
@@ -745,6 +749,7 @@
       <a href="#program">Программа</a>
       <a href="#hotel">Отель</a>
       <a href="#excursion">Экскурсия</a>
+      <a href="#gallery">Галерея</a>
       <a href="#price">Стоимость</a>
     </div>
 
@@ -930,12 +935,12 @@
     </div>
 
     <div class="gallery">
-      <img src="images/hotel/26ce643b-93c8-4bee-a4e9-3b24bbd35c4c.jpeg" alt="Отель">
+      <img src="images/hotel/d8f4d0d8-90e3-4194-a89c-3cf67fa57341.jpeg" alt="Отель">
       <img src="images/hotel/3c7f390e-bc7f-4326-bf2e-c087dde7e023.jpeg" alt="Отель">
       <img src="images/hotel/5470021278644245359.jpg" alt="Отель">
       <img src="images/hotel/765e5a11-d638-436d-9ba2-d26f5b443c37.jpeg" alt="Отель">
       <img src="images/hotel/c5262178-ad3d-4a7b-be2b-8b8a42be5c0d.jpeg" alt="Отель">
-      <img src="images/hotel/d8f4d0d8-90e3-4194-a89c-3cf67fa57341.jpeg" alt="Отель">
+      <img src="images/hotel/26ce643b-93c8-4bee-a4e9-3b24bbd35c4c.jpeg" alt="Отель">
     </div>
   </div>
 </section>
@@ -963,6 +968,32 @@
           <div>После экскурсии — вечерний игровой блок</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Галерея</div>
+        <h2>Атмосфера падел-кэмпа</h2>
+      </div>
+
+      <p class="section-text">
+        Тренировки, матчи, динамика на корте и спортивная атмосфера поездки.
+      </p>
+    </div>
+
+    <div class="padel-gallery">
+      <img src="images/padel/073.jpg" alt="Падел">
+      <img src="images/padel/078.jpg" alt="Падел">
+      <img src="images/padel/084.jpg" alt="Падел">
+      <img src="images/padel/132.jpg" alt="Падел">
+      <img src="images/padel/137.jpg" alt="Падел">
+      <img src="images/padel/163.jpg" alt="Падел">
+      <img src="images/padel/164.jpg" alt="Падел">
+      <img src="images/padel/256.jpg" alt="Падел">
     </div>
   </div>
 </section>
@@ -1014,13 +1045,6 @@
 
         <a class="btn btn-secondary" href="https://t.me/USERNAME" target="_blank">Уточнить условия</a>
       </div>
-    </div>
-
-    <div class="included">
-      <div class="included-item"><strong>Входит</strong>проживание</div>
-      <div class="included-item"><strong>Входит</strong>питание по системе шведский стол</div>
-      <div class="included-item"><strong>Входит</strong>SPA-комплекс</div>
-      <div class="included-item"><strong>Входит</strong>экскурсия по Суздалю</div>
     </div>
   </div>
 </section>
