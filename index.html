@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Padel Camp Suzdal</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +30,7 @@
       background:var(--bg);
       color:var(--text);
       line-height:1.5;
+      overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit;}
@@ -249,9 +251,7 @@
 
     section{padding:92px 0;}
 
-    #about{
-      padding-top:55px;
-    }
+    #about{padding-top:55px;}
 
     .section-head{
       display:flex;
@@ -337,6 +337,249 @@
     .f5{background-image:url("images/hotel/3c7f390e-bc7f-4326-bf2e-c087dde7e023.jpeg");}
     .f6{background-image:url("images/suzdal/15b144ddb9e052f8e6aaf504ae87a7c2.jpg");}
 
+    .split{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .photo-card{
+      overflow:hidden;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      min-height:560px;
+    }
+
+    .photo-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .program{
+      display:grid;
+      gap:12px;
+    }
+
+    .day{
+      padding:24px;
+      border-radius:26px;
+      background:rgba(255,255,255,.75);
+      box-shadow:var(--shadow);
+    }
+
+    .day strong{
+      display:block;
+      margin-bottom:12px;
+      font-family:"Inter",sans-serif;
+      font-size:18px;
+      color:var(--green-dark);
+      font-weight:900;
+    }
+
+    .day ul{
+      padding-left:18px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery img:nth-child(1),
+    .gallery img:nth-child(6){
+      grid-column:span 2;
+    }
+
+    .padel-gallery{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .padel-gallery img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      border-radius:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .padel-gallery img:nth-child(1){
+      grid-column:span 2;
+      grid-row:span 2;
+      height:574px;
+    }
+
+    .padel-gallery img:nth-child(4){
+      grid-column:span 2;
+    }
+
+    .excursion-card{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+      background:rgba(255,255,255,.76);
+      border-radius:36px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .excursion-photo img{
+      width:100%;
+      height:100%;
+      min-height:420px;
+      object-fit:cover;
+    }
+
+    .excursion-content{
+      padding:42px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .excursion-content h2{margin-bottom:20px;}
+
+    .excursion-content p{
+      color:var(--muted);
+      font-size:17px;
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .excursion-list{
+      display:grid;
+      gap:12px;
+      margin-top:10px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .excursion-list div{
+      padding:14px 16px;
+      border-radius:18px;
+      background:rgba(183,239,86,.18);
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .price-card{
+      padding:34px;
+      border-radius:30px;
+      background:rgba(255,255,255,.8);
+      box-shadow:var(--shadow);
+    }
+
+    .highlight{
+      background:linear-gradient(135deg,rgba(183,239,86,.32),rgba(255,255,255,.92));
+    }
+
+    .price-card h3{
+      font-size:28px;
+      margin-bottom:12px;
+      color:var(--green-dark);
+      font-weight:900;
+    }
+
+    .price{
+      font-family:"Inter",sans-serif;
+      font-size:46px;
+      font-weight:900;
+      margin:22px 0 10px;
+      color:var(--green-dark);
+      letter-spacing:-.04em;
+    }
+
+    .price-note{
+      color:var(--muted);
+      margin-bottom:24px;
+      font-weight:600;
+    }
+
+    .price-card ul{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin-bottom:28px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .price-card li::before{
+      content:"✓";
+      margin-right:10px;
+      color:var(--green-dark);
+      font-weight:900;
+    }
+
+    .faq{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    details{
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(49,81,58,.12);
+      box-shadow:0 14px 34px rgba(24,56,44,.07);
+    }
+
+    summary{
+      cursor:pointer;
+      font-family:"Inter",sans-serif;
+      font-weight:900;
+      font-size:18px;
+      color:var(--green-dark);
+    }
+
+    details p{
+      color:var(--muted);
+      margin-top:12px;
+      font-weight:600;
+    }
+
+    .cta{
+      padding:70px;
+      border-radius:40px;
+      background:
+      linear-gradient(90deg,rgba(24,56,44,.84),rgba(24,56,44,.48)),
+      url("images/padel/340.jpg") center/cover no-repeat;
+      box-shadow:var(--shadow);
+    }
+
+    .cta h2{
+      color:#fff;
+      margin-bottom:18px;
+    }
+
+    .cta p{
+      color:rgba(255,255,255,.88);
+      max-width:620px;
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:28px;
+    }
+
     .floating-contact{
       position:fixed;
       right:18px;
@@ -367,6 +610,365 @@
       0%{transform:scale(1);}
       50%{transform:scale(1.06);}
       100%{transform:scale(1);}
+    }
+
+    .footer{
+      padding:40px 0 50px;
+      color:var(--muted);
+      font-weight:600;
+      border-top:1px solid rgba(0,0,0,.06);
+      background:#fff;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    @media(max-width:1080px){
+      .nav{
+        width:min(960px,calc(100% - 32px));
+        grid-template-columns:170px 1fr 170px;
+        gap:12px;
+      }
+
+      .logo-img{width:165px;}
+      .nav-links{gap:9px;font-size:9px;}
+    }
+
+    @media(max-width:900px){
+      .nav{
+        width:min(720px,calc(100% - 24px));
+        grid-template-columns:1fr auto;
+      }
+
+      .nav-links{display:none;}
+
+      .hero-grid,
+      .split,
+      .pricing,
+      .faq,
+      .excursion-card{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        justify-self:start;
+        max-width:100%;
+        min-height:auto;
+      }
+
+      .hero-card img{
+        height:320px;
+        min-height:320px;
+      }
+
+      .features{grid-template-columns:1fr 1fr;}
+      .gallery{grid-template-columns:1fr 1fr;}
+      .padel-gallery{grid-template-columns:1fr 1fr;}
+
+      .gallery img,
+      .gallery img:nth-child(1),
+      .gallery img:nth-child(6),
+      .padel-gallery img,
+      .padel-gallery img:nth-child(1),
+      .padel-gallery img:nth-child(4){
+        grid-column:span 1;
+        grid-row:span 1;
+        height:260px;
+      }
+
+      .section-head{display:block;}
+      .section-text{margin-top:16px;}
+    }
+
+    @media(max-width:560px){
+      .container{
+        width:min(100% - 22px,1160px);
+      }
+
+      .header{
+        top:10px;
+      }
+
+      .nav{
+        width:min(100% - 20px,1160px);
+        padding:8px 10px;
+        grid-template-columns:1fr auto;
+        gap:8px;
+        border-radius:24px;
+      }
+
+      .logo-img{
+        width:132px;
+        height:36px;
+      }
+
+      .nav .btn{
+        width:auto;
+        padding:11px 13px;
+        font-size:9px;
+        letter-spacing:.02em;
+      }
+
+      .hero{
+        min-height:auto;
+        padding:102px 0 34px;
+        background:
+        linear-gradient(180deg,rgba(246,240,229,.08),var(--bg) 98%),
+        linear-gradient(90deg,rgba(246,240,229,.94),rgba(246,240,229,.72),rgba(246,240,229,.42)),
+        url("images/hotel/XXL.jpeg") center 34%/cover no-repeat;
+      }
+
+      .hero-grid{
+        gap:24px;
+      }
+
+      .badge{
+        width:100%;
+        max-width:100%;
+        padding:12px 14px 10px;
+        border-radius:20px;
+        margin-bottom:20px;
+      }
+
+      .badge-big{
+        font-size:25px;
+        letter-spacing:.02em;
+        margin-bottom:9px;
+      }
+
+      .ticker span{
+        font-size:9px;
+        letter-spacing:.045em;
+      }
+
+      .ticker-track{
+        animation-duration:20s;
+      }
+
+      h1{
+        font-size:48px;
+        line-height:.94;
+        margin-bottom:18px;
+      }
+
+      .hero-text{
+        font-size:15px;
+        line-height:1.45;
+        margin-bottom:24px;
+        max-width:100%;
+      }
+
+      .hero-actions{
+        gap:10px;
+      }
+
+      .btn{
+        width:100%;
+        padding:14px 18px;
+        font-size:11px;
+      }
+
+      .hero-card{
+        border-radius:24px;
+        min-height:auto;
+      }
+
+      .hero-card img{
+        height:230px;
+        min-height:230px;
+      }
+
+      .hero-card-content{
+        padding:20px;
+      }
+
+      .hero-card-content h3{
+        font-size:22px;
+      }
+
+      .hero-card-content p{
+        font-size:14px;
+      }
+
+      section{
+        padding:56px 0;
+      }
+
+      #about{
+        padding-top:34px;
+      }
+
+      .section-head{
+        margin-bottom:24px;
+      }
+
+      .eyebrow{
+        font-size:11px;
+        margin-bottom:10px;
+      }
+
+      h2{
+        font-size:36px;
+        line-height:.98;
+      }
+
+      .section-text{
+        font-size:15px;
+        line-height:1.5;
+      }
+
+      .features{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .feature{
+        min-height:230px;
+        border-radius:24px;
+        padding:22px;
+      }
+
+      .feature h3{
+        font-size:21px;
+      }
+
+      .feature p{
+        font-size:14px;
+      }
+
+      .split{
+        gap:20px;
+      }
+
+      .photo-card{
+        min-height:300px;
+        border-radius:24px;
+      }
+
+      .day{
+        padding:20px;
+        border-radius:22px;
+      }
+
+      .day strong{
+        font-size:17px;
+      }
+
+      .day li{
+        font-size:14px;
+        margin-bottom:4px;
+      }
+
+      .gallery,
+      .padel-gallery{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .gallery img,
+      .gallery img:nth-child(1),
+      .gallery img:nth-child(6),
+      .padel-gallery img,
+      .padel-gallery img:nth-child(1),
+      .padel-gallery img:nth-child(4){
+        height:245px;
+        grid-column:span 1;
+        grid-row:span 1;
+        border-radius:22px;
+      }
+
+      .excursion-card{
+        border-radius:28px;
+      }
+
+      .excursion-photo img{
+        min-height:280px;
+        height:280px;
+      }
+
+      .excursion-content{
+        padding:24px;
+      }
+
+      .excursion-content p{
+        font-size:15px;
+      }
+
+      .excursion-list div{
+        font-size:14px;
+        padding:13px 14px;
+      }
+
+      .pricing{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .price-card{
+        padding:24px;
+        border-radius:26px;
+      }
+
+      .price-card h3{
+        font-size:24px;
+      }
+
+      .price{
+        font-size:38px;
+      }
+
+      .price-note,
+      .price-card li{
+        font-size:14px;
+      }
+
+      .faq{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      details{
+        padding:18px;
+        border-radius:20px;
+      }
+
+      summary{
+        font-size:16px;
+      }
+
+      details p{
+        font-size:14px;
+      }
+
+      .cta{
+        padding:34px 22px;
+        border-radius:28px;
+      }
+
+      .cta p{
+        font-size:15px;
+      }
+
+      .floating-contact{
+        right:12px;
+        bottom:12px;
+        gap:8px;
+      }
+
+      .float-btn{
+        width:52px;
+        height:52px;
+        font-size:13px;
+      }
+
+      .footer{
+        padding:28px 0 36px;
+        font-size:13px;
+      }
     }
   </style>
 </head>
@@ -399,7 +1001,6 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-left">
-
       <div class="badge">
         <div class="badge-big">28 июня — 3 июля</div>
 
@@ -421,6 +1022,7 @@
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Оставить заявку</a>
+        <a class="btn btn-secondary" href="#program">Смотреть программу</a>
       </div>
     </div>
 
@@ -439,12 +1041,325 @@
   </div>
 </section>
 
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Что входит</div>
+        <h2>Кэмп, где падел — часть полноценного отдыха</h2>
+      </div>
+
+      <p class="section-text">
+        Не просто турнир, а полноценная поездка: тренировки, игры, восстановление,
+        питание, экскурсия и проживание на территории SPA-отеля.
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="feature f1">
+        <h3>Тренировки с тренером</h3>
+        <p>Каждый день — занятие с тренером: техника, тактика, игровые связки и работа над ошибками.</p>
+      </div>
+
+      <div class="feature f2">
+        <h3>Игры и турнир</h3>
+        <p>Вечером — матчевые форматы, смена пар, соревновательный вайб и финальные игры.</p>
+      </div>
+
+      <div class="feature f3">
+        <h3>SPA-комплекс</h3>
+        <p>SPA-программы входят в стоимость, чтобы восстановиться после активных игровых дней.</p>
+      </div>
+
+      <div class="feature f4">
+        <h3>Шведский стол</h3>
+        <p>3-х разовое питание по системе шведский стол уже включено в пакет участия.</p>
+      </div>
+
+      <div class="feature f5">
+        <h3>Проживание</h3>
+        <p>Размещение на территории SPA-отеля: двухместный номер или индивидуальное проживание.</p>
+      </div>
+
+      <div class="feature f6">
+        <h3>Экскурсия по Суздалю</h3>
+        <p>Обзорная автобусная экскурсия: город, история, красивые виды и фото-точки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="program">
+  <div class="container split">
+    <div class="photo-card">
+      <img src="images/padel/050.jpg" alt="Падел">
+    </div>
+
+    <div>
+      <div class="eyebrow">Программа</div>
+      <h2>5 дней игры, восстановления и красивого отдыха</h2>
+
+      <p class="section-text" style="margin:18px 0 28px;">
+        Каждый день построен так, чтобы было достаточно спорта, отдыха и живого общения.
+      </p>
+
+      <div class="program">
+        <div class="day">
+          <strong>День 1</strong>
+          <ul>
+            <li>Заезд и размещение в SPA-отеле</li>
+            <li>Знакомство участников и распределение по уровню</li>
+            <li>Лёгкая вводная тренировка</li>
+            <li>Welcome-ужин и разбор формата кэмпа</li>
+          </ul>
+        </div>
+
+        <div class="day">
+          <strong>День 2</strong>
+          <ul>
+            <li>Тренировка с тренером: техника, контроль мяча, позиция на корте</li>
+            <li>Свободное время и SPA-комплекс</li>
+            <li>Открытие турнира по паделу, первые матчи</li>
+          </ul>
+        </div>
+
+        <div class="day">
+          <strong>День 3</strong>
+          <ul>
+            <li>Утренняя тренировка: тактика, свечи, выход к сетке</li>
+            <li>Обзорная автобусная экскурсия по Суздалю</li>
+            <li>Фото-прогулка и свободное время</li>
+            <li>Вечерняя активность: командные игры и неформальное общение</li>
+          </ul>
+        </div>
+
+        <div class="day">
+          <strong>День 4</strong>
+          <ul>
+            <li>Тренировка: командное взаимодействие и игровые сценарии</li>
+            <li>SPA, восстановление и отдых на территории отеля</li>
+            <li>Основной турнирный вечер</li>
+            <li>Матчи за выход в финал</li>
+          </ul>
+        </div>
+
+        <div class="day">
+          <strong>День 5</strong>
+          <ul>
+            <li>Финал турнира</li>
+            <li>Награждение и общие фото</li>
+            <li>Финальный обед</li>
+            <li>Выезд участников</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hotel">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Локация</div>
+        <h2>Территория SPA-отеля в Суздале</h2>
+      </div>
+
+      <p class="section-text">
+        Удобный формат: живёте, питаетесь по системе шведский стол,
+        отдыхаете, восстанавливаетесь и проводите кэмп в одной локации.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/hotel/d8f4d0d8-90e3-4194-a89c-3cf67fa57341.jpeg" alt="Отель">
+      <img src="images/hotel/3c7f390e-bc7f-4326-bf2e-c087dde7e023.jpeg" alt="Отель">
+      <img src="images/hotel/5470021278644245359.jpg" alt="Отель">
+      <img src="images/hotel/765e5a11-d638-436d-9ba2-d26f5b443c37.jpeg" alt="Отель">
+      <img src="images/hotel/c5262178-ad3d-4a7b-be2b-8b8a42be5c0d.jpeg" alt="Отель">
+      <img src="images/hotel/26ce643b-93c8-4bee-a4e9-3b24bbd35c4c.jpeg" alt="Отель">
+    </div>
+  </div>
+</section>
+
+<section id="excursion">
+  <div class="container">
+    <div class="excursion-card">
+      <div class="excursion-photo">
+        <img src="images/suzdal/01cf5d961584d8ca5159d67ac51d03cd.jpg" alt="Суздаль">
+      </div>
+
+      <div class="excursion-content">
+        <div class="eyebrow">Экскурсия</div>
+        <h2>Обзорная экскурсия по Суздалю</h2>
+
+        <p>
+          В программу входит автобусная обзорная экскурсия по городу.
+          Это отдельный день для атмосферы, прогулок, фото и знакомства с историческим центром.
+        </p>
+
+        <div class="excursion-list">
+          <div>Автобусный формат</div>
+          <div>Главные исторические места</div>
+          <div>Фото-точки и красивые виды</div>
+          <div>После экскурсии — вечерний игровой блок</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Галерея</div>
+        <h2>Атмосфера падел-кэмпа</h2>
+      </div>
+
+      <p class="section-text">
+        Тренировки, матчи, динамика на корте и спортивная атмосфера поездки.
+      </p>
+    </div>
+
+    <div class="padel-gallery">
+      <img src="images/padel/073.jpg" alt="Падел">
+      <img src="images/padel/078.jpg" alt="Падел">
+      <img src="images/padel/084.jpg" alt="Падел">
+      <img src="images/padel/132.jpg" alt="Падел">
+      <img src="images/padel/137.jpg" alt="Падел">
+      <img src="images/padel/163.jpg" alt="Падел">
+      <img src="images/padel/164.jpg" alt="Падел">
+      <img src="images/padel/256.jpg" alt="Падел">
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Стоимость</div>
+        <h2>Два базовых варианта размещения</h2>
+      </div>
+
+      <p class="section-text">
+        Если хотите подселить жену, родственников или детей — стоимость согласовывается индивидуально.
+      </p>
+    </div>
+
+    <div class="pricing">
+      <div class="price-card highlight">
+        <h3>Двухместное размещение</h3>
+        <div class="price">99 000 ₽</div>
+        <p class="price-note">за участника при проживании в двухместном номере</p>
+
+        <ul>
+          <li>Проживание</li>
+          <li>3-х разовое питание по системе шведский стол</li>
+          <li>Ежедневные тренировки с тренером</li>
+          <li>Вечерние игры и турнир</li>
+          <li>SPA-программы</li>
+          <li>Обзорная экскурсия по Суздалю</li>
+        </ul>
+
+        <a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Забронировать место</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Индивидуальное размещение</h3>
+        <div class="price">119 000 ₽</div>
+        <p class="price-note">за участника при отдельном проживании</p>
+
+        <ul>
+          <li>Отдельный номер</li>
+          <li>3-х разовое питание по системе шведский стол</li>
+          <li>Ежедневные тренировки с тренером</li>
+          <li>Вечерние игры и турнир</li>
+          <li>SPA-программы</li>
+          <li>Обзорная экскурсия по Суздалю</li>
+        </ul>
+
+        <a class="btn btn-secondary" href="https://t.me/zzzpeace" target="_blank">Уточнить условия</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <h2>Частые вопросы</h2>
+      </div>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Можно приехать одному?</summary>
+        <p>Да. Формат кэмпа подходит для соло-игроков. Пары и игровые группы будут формироваться на месте.</p>
+      </details>
+
+      <details>
+        <summary>Какой уровень нужен?</summary>
+        <p>Подойдёт любительский уровень. Группы и игровые пары можно распределить по силе участников.</p>
+      </details>
+
+      <details>
+        <summary>Можно взять семью?</summary>
+        <p>Да. Подселение жены, родственников или детей обсуждается индивидуально по стоимости и условиям отеля.</p>
+      </details>
+
+      <details>
+        <summary>Что входит в стоимость?</summary>
+        <p>Проживание, 3-х разовое питание по системе шведский стол, тренировки, игры/турнир, SPA-программы и обзорная экскурсия по Суздалю.</p>
+      </details>
+
+      <details>
+        <summary>Когда проходит кэмп?</summary>
+        <p>Даты проведения: с 28 июня по 3 июля.</p>
+      </details>
+
+      <details>
+        <summary>Будет ли турнир?</summary>
+        <p>Да. Помимо тренировок будут вечерние игры, турнирные блоки и финальные матчи.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>Забронируйте место в Padel Camp Suzdal</h2>
+
+      <p>
+        Оставьте заявку — мы уточним формат размещения, состав участников,
+        уровень игры и ответим на вопросы по программе.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Написать в Telegram</a>
+        <a class="btn btn-secondary" href="tel:+79064313752">Написать в Max</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <div class="floating-contact">
-  <a class="float-btn float-tg" href="https://t.me/zzzpeace" target="_blank">TG</a>
-  <a class="float-btn float-max" href="tel:+79064313752">MAX</a>
+  <a class="float-btn float-tg" href="https://t.me/zzzpeace" target="_blank" aria-label="Telegram">TG</a>
+  <a class="float-btn float-max" href="tel:+79064313752" aria-label="Max">MAX</a>
 </div>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© 2026 Padel Camp Suzdal</div>
+    <div>28 июня — 3 июля · Суздаль</div>
+  </div>
+</footer>
 
 </body>
 </html>
