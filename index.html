@@ -138,6 +138,26 @@ details p{margin-top:12px;color:#69756e;font-weight:600;}
 .float-max{background:#274235;}
 
 @media(max-width:768px){
+
+#program .container > div:last-child{
+display:flex !important;
+flex-direction:column !important;
+}
+
+#program .container > div:last-child > div:first-child{
+order:1;
+}
+
+#program .container > div:last-child > div:first-child img{
+min-height:auto !important;
+height:260px !important;
+margin-bottom:16px;
+}
+
+#program .container > div:last-child > div:last-child{
+order:2;
+}
+
 body{overflow-x:hidden;}
 .container{width:min(100% - 20px,1160px);max-width:100%;}
 
@@ -183,6 +203,9 @@ h2{font-size:36px;line-height:.98;}
 
 <div class="mobile-menu" id="mobileMenu">
 <a href="#about">О кэмпе</a>
+<a href="#program">Программа</a>
+<a href="#hotel">Отель</a>
+<a href="#excursion">Экскурсия</a>
 <a href="#gallery">Галерея</a>
 <a href="#price">Стоимость</a>
 <a href="#faq">FAQ</a>
