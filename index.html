@@ -127,7 +127,13 @@ summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:900;color:var(
 details p{margin-top:12px;color:#69756e;font-weight:600;}
 
 .floating-contact{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:120;}
-.float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Inter",sans-serif;font-size:13px;font-weight:900;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);}
+.float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Inter",sans-serif;font-size:13px;font-weight:900;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);animation:pulse 2s infinite;}
+
+@keyframes pulse{
+0%{transform:scale(1);box-shadow:0 0 0 0 rgba(0,0,0,.25);}
+70%{transform:scale(1.06);box-shadow:0 0 0 14px rgba(0,0,0,0);}
+100%{transform:scale(1);box-shadow:0 0 0 0 rgba(0,0,0,0);}
+}
 .float-tg{background:#229ED9;}
 .float-max{background:#274235;}
 
@@ -189,6 +195,9 @@ h2{font-size:36px;line-height:.98;}
 </a>
 <div class="nav-links">
 <a href="#about">О кэмпе</a>
+<a href="#program">Программа</a>
+<a href="#hotel">Отель</a>
+<a href="#excursion">Экскурсия</a>
 <a href="#gallery">Галерея</a>
 <a href="#price">Стоимость</a>
 <a href="#faq">FAQ</a>
@@ -269,12 +278,59 @@ h2{font-size:36px;line-height:.98;}
 </div>
 
 <div class="features">
-<div class="feature f1"><h3>День 1</h3><p>Заезд, знакомство, первая тренировка и вечерний padel mix.</p></div>
-<div class="feature f2"><h3>День 2</h3><p>Техника, контроль мяча, SPA и старт турнира.</p></div>
-<div class="feature f6"><h3>День 3</h3><p>Экскурсия по Суздалю, восстановление и вечерняя игра.</p></div>
-<div class="feature f3"><h3>День 4</h3><p>Игровые сценарии, командные матчи и вечерний турнир.</p></div>
-<div class="feature f4"><h3>День 5</h3><p>Финал турнира, награждение, общий обед и выезд.</p></div>
-<div class="feature f5"><h3>Каждый день</h3><p>SPA-комплекс, шведский стол и атмосфера летнего кэмпа.</p></div>
+<div class="feature f1">
+<h3>День 1</h3>
+<p>
+Заезд и размещение<br>
+Знакомство участников<br>
+Первая тренировка и вечерний padel mix
+</p>
+</div>
+
+<div class="feature f2">
+<h3>День 2</h3>
+<p>
+Тренировка: техника, контроль мяча и позиция на корте<br>
+SPA-комплекс и свободное время<br>
+Открытие турнира и первые матчи
+</p>
+</div>
+
+<div class="feature f6">
+<h3>День 3</h3>
+<p>
+Обзорная экскурсия по Суздалю<br>
+Восстановление и отдых<br>
+Вечерний турнир и ужин
+</p>
+</div>
+
+<div class="feature f3">
+<h3>День 4</h3>
+<p>
+Тренировка: командное взаимодействие и игровые сценарии<br>
+SPA и отдых на территории отеля<br>
+Матчи за выход в финал
+</p>
+</div>
+
+<div class="feature f4">
+<h3>День 5</h3>
+<p>
+Финал турнира<br>
+Награждение и общие фото<br>
+Финальный обед и выезд участников
+</p>
+</div>
+
+<div class="feature f5">
+<h3>Каждый день</h3>
+<p>
+3-х разовое питание по системе шведский стол<br>
+Тренировки и вечерние игры<br>
+Комьюнити и атмосфера летнего кэмпа
+</p>
+</div>
 </div>
 </div>
 </section>
@@ -309,8 +365,8 @@ h2{font-size:36px;line-height:.98;}
 
 <div class="gallery-grid">
 <img src="images/suzdal/15b144ddb9e052f8e6aaf504ae87a7c2.jpg" alt="">
-<img src="images/suzdal/01.jpg" alt="">
-<img src="images/suzdal/02.jpg" alt="">
+<img src="images/suzdal/03.jpg" alt="">
+<img src="images/suzdal/04.jpg" alt="">
 </div>
 </div>
 </section>
@@ -369,7 +425,7 @@ h2{font-size:36px;line-height:.98;}
 <li>SPA-комплекс</li>
 <li>Турнир</li>
 </ul>
-<a class="btn btn-secondary" href="https://t.me/zzzpeace" target="_blank">Уточнить</a>
+<a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Забронировать</a>
 </div>
 </div>
 </div>
