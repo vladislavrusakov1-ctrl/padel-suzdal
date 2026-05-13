@@ -1,350 +1,111 @@
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Padel Camp Suzdal</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-  --bg:#f6f0e5;
-  --green:#b7ef56;
-  --green-dark:#274235;
-  --text:#17251f;
-  --muted:#69756e;
-  --radius:28px;
-  --shadow:0 18px 50px rgba(0,0,0,.08);
+--bg:#f6f0e5;
+--green:#b7ef56;
+--green-dark:#274235;
+--text:#17251f;
+--muted:#69756e;
+--radius:28px;
+--shadow:0 18px 50px rgba(0,0,0,.08);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"Montserrat",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+.container{width:min(1160px,calc(100% - 32px));margin:0 auto;}
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:"Montserrat",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-img{
-  display:block;
-  max-width:100%;
-}
-
-.container{
-  width:min(1160px,calc(100% - 32px));
-  margin:0 auto;
-}
-
-/* ================= HEADER ================= */
-
-.header{
-  position:fixed;
-  top:16px;
-  left:0;
-  right:0;
-  z-index:100;
-}
-
+.header{position:fixed;top:16px;left:0;right:0;z-index:200;}
 .nav{
-  width:min(1020px,calc(100% - 32px));
-  margin:0 auto;
-  padding:10px 18px;
-  border-radius:999px;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(18px);
-
-  display:grid;
-  grid-template-columns:190px 1fr 190px;
-
-  align-items:center;
-  gap:18px;
-
-  box-shadow:0 12px 40px rgba(0,0,0,.06);
+width:min(1020px,calc(100% - 32px));
+margin:0 auto;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(18px);
+display:grid;
+grid-template-columns:190px 1fr 190px;
+align-items:center;
+gap:18px;
+box-shadow:0 12px 40px rgba(0,0,0,.06);
 }
+.logo-img{width:180px;height:48px;object-fit:contain;}
+.nav-links{display:flex;justify-content:center;gap:14px;font-family:"Inter",sans-serif;font-size:11px;font-weight:900;text-transform:uppercase;color:#3d4e46;}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;border:none;cursor:pointer;font-family:"Inter",sans-serif;font-size:12px;font-weight:900;text-transform:uppercase;transition:.2s ease;}
+.btn-primary{background:var(--green);color:#1d2b22;}
+.btn-secondary{background:#fff;color:var(--green-dark);}
+.mobile-menu-btn{display:none;}
 
-.logo-img{
-  width:180px;
-  height:48px;
-  object-fit:contain;
+.mobile-menu{
+position:fixed;
+inset:0;
+background:rgba(246,240,229,.98);
+z-index:180;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:26px;
+opacity:0;
+pointer-events:none;
+transition:.25s ease;
 }
-
-.nav-links{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-
-  font-family:"Inter",sans-serif;
-  font-size:11px;
-  font-weight:900;
-  text-transform:uppercase;
-
-  color:#3d4e46;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:14px 20px;
-
-  border-radius:999px;
-  border:none;
-
-  cursor:pointer;
-
-  font-family:"Inter",sans-serif;
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-
-  transition:.2s ease;
-}
-
-.btn-primary{
-  background:var(--green);
-  color:#1d2b22;
-}
-
-.btn-secondary{
-  background:#fff;
-  color:var(--green-dark);
-}
-
-/* ================= HERO ================= */
+.mobile-menu.active{opacity:1;pointer-events:auto;}
+.mobile-menu a{font-family:"Inter",sans-serif;font-size:28px;font-weight:900;color:var(--green-dark);}
 
 .hero{
-  min-height:100vh;
-
-  padding:145px 0 50px;
-
-  background:
-  linear-gradient(180deg,rgba(246,240,229,.12),var(--bg) 98%),
-  linear-gradient(90deg,rgba(246,240,229,.96),rgba(246,240,229,.58),rgba(246,240,229,.20)),
-  url("images/hotel/XXL.jpeg") center 28%/cover no-repeat;
+min-height:100vh;
+padding:145px 0 50px;
+background:
+linear-gradient(180deg,rgba(246,240,229,.12),var(--bg) 98%),
+linear-gradient(90deg,rgba(246,240,229,.96),rgba(246,240,229,.58),rgba(246,240,229,.20)),
+url("images/hotel/XXL.jpeg") center 28%/cover no-repeat;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr .9fr;
-  gap:34px;
-  align-items:center;
-}
+.hero-grid{display:grid;grid-template-columns:1fr .9fr;gap:34px;align-items:center;}
+.badge{width:100%;max-width:560px;padding:15px 18px 12px;border-radius:24px;background:rgba(255,255,255,.82);box-shadow:0 10px 30px rgba(0,0,0,.06);margin-bottom:24px;overflow:hidden;}
+.badge-big{font-family:"Inter",sans-serif;font-size:42px;font-weight:900;text-align:center;color:var(--green-dark);margin-bottom:10px;}
+.ticker{overflow:hidden;white-space:nowrap;}
+.ticker-track{display:inline-flex;width:max-content;animation:ticker 22s linear infinite;}
+.ticker span{font-family:"Inter",sans-serif;font-size:11px;font-weight:900;text-transform:uppercase;color:#5d6b64;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-.badge{
-  width:100%;
-  max-width:560px;
+h1,h2,h3{font-family:"Inter",sans-serif;}
+h1{font-size:92px;line-height:.92;color:var(--green-dark);margin-bottom:22px;}
+.hero-text{max-width:620px;font-size:20px;color:#44534b;font-weight:600;margin-bottom:30px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-card{overflow:hidden;border-radius:30px;background:#fff;box-shadow:var(--shadow);}
+.hero-card img{width:100%;height:420px;object-fit:cover;}
+.hero-card-content{padding:24px;}
+.hero-card-content h3{font-size:26px;color:var(--green-dark);margin-bottom:10px;}
+.hero-card-content p{color:#69756e;font-weight:600;}
 
-  padding:15px 18px 12px;
+section{padding:80px 0;}
+.section-head{display:flex;justify-content:space-between;gap:28px;margin-bottom:34px;}
+.eyebrow{font-family:"Inter",sans-serif;text-transform:uppercase;font-size:12px;font-weight:900;letter-spacing:.12em;color:var(--green-dark);margin-bottom:10px;}
+h2{font-size:58px;line-height:.96;color:var(--green-dark);}
+.section-text{max-width:450px;color:#69756e;font-weight:600;}
 
-  border-radius:24px;
-
-  background:rgba(255,255,255,.82);
-
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
-
-  margin-bottom:24px;
-
-  overflow:hidden;
-}
-
-.badge-big{
-  font-family:"Inter",sans-serif;
-  font-size:42px;
-  font-weight:900;
-
-  text-align:center;
-
-  color:var(--green-dark);
-
-  margin-bottom:10px;
-}
-
-.ticker{
-  overflow:hidden;
-  white-space:nowrap;
-}
-
-.ticker-track{
-  display:inline-flex;
-  width:max-content;
-  animation:ticker 22s linear infinite;
-}
-
-.ticker span{
-  font-family:"Inter",sans-serif;
-  font-size:11px;
-  font-weight:900;
-  text-transform:uppercase;
-  color:#5d6b64;
-}
-
-@keyframes ticker{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-
-h1,h2,h3{
-  font-family:"Inter",sans-serif;
-}
-
-h1{
-  font-size:92px;
-  line-height:.92;
-  color:var(--green-dark);
-  margin-bottom:22px;
-}
-
-.hero-text{
-  max-width:620px;
-
-  font-size:20px;
-
-  color:#44534b;
-  font-weight:600;
-
-  margin-bottom:30px;
-}
-
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.hero-card{
-  overflow:hidden;
-  border-radius:30px;
-  background:#fff;
-  box-shadow:var(--shadow);
-}
-
-.hero-card img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
-
-.hero-card-content{
-  padding:24px;
-}
-
-.hero-card-content h3{
-  font-size:26px;
-  color:var(--green-dark);
-  margin-bottom:10px;
-}
-
-.hero-card-content p{
-  color:#69756e;
-  font-weight:600;
-}
-
-/* ================= COMMON ================= */
-
-section{
-  padding:80px 0;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  gap:28px;
-  margin-bottom:34px;
-}
-
-.eyebrow{
-  font-family:"Inter",sans-serif;
-  text-transform:uppercase;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.12em;
-  color:var(--green-dark);
-  margin-bottom:10px;
-}
-
-h2{
-  font-size:58px;
-  line-height:.96;
-  color:var(--green-dark);
-}
-
-.section-text{
-  max-width:450px;
-  color:#69756e;
-  font-weight:600;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-
-.feature{
-  position:relative;
-  min-height:280px;
-
-  border-radius:28px;
-  overflow:hidden;
-
-  padding:24px;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  color:#fff;
-
-  background-size:cover;
-  background-position:center;
-}
-
-.feature::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.72));
-}
-
-.feature>*{
-  position:relative;
-  z-index:1;
-}
-
-.feature h3{
-  font-size:22px;
-  margin-bottom:8px;
-}
-
-.feature p{
-  font-size:15px;
-  font-weight:600;
-}
-
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.feature{position:relative;min-height:280px;border-radius:28px;overflow:hidden;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background-size:cover;background-position:center;}
+.feature::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.72));}
+.feature>*{position:relative;z-index:1;}
+.feature h3{font-size:22px;margin-bottom:8px;}
+.feature p{font-size:15px;font-weight:600;}
 .f1{background-image:url("images/padel/016.jpg");}
 .f2{background-image:url("images/padel/031.jpg");}
 .f3{background-image:url("images/hotel/26ce643b-93c8-4bee-a4e9-3b24bbd35c4c.jpeg");}
@@ -352,478 +113,235 @@ h2{
 .f5{background-image:url("images/hotel/3c7f390e-bc7f-4326-bf2e-c087dde7e023.jpeg");}
 .f6{background-image:url("images/suzdal/15b144ddb9e052f8e6aaf504ae87a7c2.jpg");}
 
-/* ================= MOBILE ================= */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.gallery-grid img{width:100%;height:320px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow);}
 
-@media(max-width:560px){
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.price-card{background:#fff;border-radius:28px;padding:30px;box-shadow:var(--shadow);}
+.price-card h3{font-size:28px;color:var(--green-dark);margin-bottom:12px;}
+.price{font-size:54px;font-family:"Inter",sans-serif;font-weight:900;margin-bottom:12px;color:var(--green-dark);}
+.price-card ul{padding-left:18px;color:#69756e;font-weight:600;display:grid;gap:8px;margin:18px 0 24px;}
 
-  html,body{
-    overflow-x:hidden;
-  }
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+details{background:#fff;border-radius:22px;padding:20px;box-shadow:var(--shadow);}
+summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:900;color:var(--green-dark);}
+details p{margin-top:12px;color:#69756e;font-weight:600;}
 
-  body{
-    width:100%;
-  }
+.floating-contact{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:120;}
+.float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Inter",sans-serif;font-size:13px;font-weight:900;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);}
+.float-tg{background:#229ED9;}
+.float-max{background:#274235;}
 
-  .container{
-    width:calc(100% - 18px);
-    max-width:100%;
-  }
-
-  .header{
-    top:10px;
-    left:0;
-    right:0;
-    width:100%;
-  }
-
-  .nav{
-    width:calc(100% - 18px);
-    max-width:100%;
-
-    margin:0 auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:10px 12px;
-
-    border-radius:20px;
-
-    gap:10px;
-  }
-
-  .nav-links{
-    display:none !important;
-  }
-
-  .logo-img{
-    width:122px;
-    height:34px;
-    object-fit:contain;
-    flex-shrink:0;
-  }
-
-  .nav .btn{
-    width:auto;
-    flex-shrink:0;
-
-    padding:11px 14px;
-
-    font-size:9px;
-    line-height:1;
-
-    border-radius:999px;
-  }
-
-  .hero{
-    min-height:auto;
-
-    padding-top:96px;
-    padding-bottom:26px;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(180deg,rgba(246,240,229,.08),var(--bg) 98%),
-    linear-gradient(180deg,rgba(246,240,229,.94),rgba(246,240,229,.72),rgba(246,240,229,.44)),
-    url("images/hotel/XXL.jpeg") center 28%/cover no-repeat;
-  }
-
-  .hero-grid{
-    width:100%;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:18px;
-  }
-
-  .badge{
-    width:100%;
-    max-width:100%;
-
-    padding:12px 14px 10px;
-
-    border-radius:18px;
-
-    margin-bottom:18px;
-  }
-
-  .badge-big{
-    width:100%;
-
-    font-size:24px;
-    line-height:1;
-
-    text-align:center;
-
-    white-space:nowrap;
-
-    margin-bottom:8px;
-  }
-
-  .ticker span{
-    font-size:8px;
-  }
-
-  h1{
-    width:100%;
-    max-width:100%;
-
-    font-size:44px;
-    line-height:.93;
-
-    margin-bottom:16px;
-  }
-
-  .hero-text{
-    width:100%;
-    max-width:100%;
-
-    font-size:15px;
-    line-height:1.45;
-
-    margin-bottom:20px;
-  }
-
-  .hero-actions{
-    width:100%;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:10px;
-  }
-
-  .hero-actions .btn{
-    width:100%;
-
-    padding:15px 16px;
-
-    font-size:11px;
-  }
-
-  .hero-card{
-    width:100%;
-    max-width:100%;
-
-    border-radius:22px;
-  }
-
-  .hero-card img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-  }
-
-  .hero-card-content{
-    padding:18px;
-  }
-
-  .hero-card-content h3{
-    font-size:22px;
-    margin-bottom:8px;
-  }
-
-  .hero-card-content p{
-    font-size:14px;
-    line-height:1.45;
-  }
-
-  section{
-    padding:54px 0;
-  }
-
-  .section-head{
-    display:block;
-    margin-bottom:24px;
-  }
-
-  h2{
-    font-size:36px;
-    line-height:.98;
-  }
-
-  .section-text{
-    width:100%;
-    max-width:100%;
-
-    margin-top:14px;
-
-    font-size:15px;
-  }
-
-  .features{
-    grid-template-columns:1fr;
-    gap:12px;
-  }
-
-  .feature{
-    min-height:220px;
-    border-radius:22px;
-    padding:22px;
-  }
-
-  .feature h3{
-    font-size:21px;
-  }
-
-  .feature p{
-    font-size:14px;
-  }
-
+@media(max-width:768px){
+.container{width:calc(100% - 20px);}
+.nav{width:calc(100% - 20px);display:flex;align-items:center;justify-content:center;padding:12px 16px;position:relative;}
+.nav-links,.nav .btn{display:none;}
+.logo-img{width:150px;height:40px;}
+.mobile-menu-btn{display:flex;position:absolute;right:16px;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;background:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;}
+.mobile-menu-btn span{width:24px;height:2px;background:#274235;border-radius:999px;}
+.hero{min-height:auto;padding-top:110px;padding-bottom:40px;background:linear-gradient(180deg,rgba(246,240,229,.12),var(--bg) 98%),linear-gradient(180deg,rgba(246,240,229,.94),rgba(246,240,229,.72),rgba(246,240,229,.42)),url("images/hotel/XXL.jpeg") center 28%/cover no-repeat;}
+.hero-grid{display:flex;flex-direction:column;gap:18px;}
+.badge{max-width:100%;padding:12px 14px 10px;border-radius:18px;margin-bottom:18px;}
+.badge-big{font-size:26px;line-height:1;margin-bottom:8px;}
+.ticker span{font-size:8px;}
+h1{font-size:46px;line-height:.92;margin-bottom:16px;}
+.hero-text{font-size:15px;line-height:1.45;margin-bottom:20px;}
+.hero-actions{display:flex;flex-direction:column;gap:10px;}
+.hero-actions .btn{width:100%;font-size:11px;padding:15px 16px;}
+.hero-card{width:100%;border-radius:22px;}
+.hero-card img{height:240px;}
+.hero-card-content{padding:18px;}
+.hero-card-content h3{font-size:22px;}
+.hero-card-content p{font-size:14px;line-height:1.45;}
+section{padding:56px 0;}
+.section-head{display:block;margin-bottom:24px;}
+h2{font-size:36px;line-height:.98;}
+.section-text{margin-top:14px;font-size:15px;}
+.features,.gallery-grid,.price-grid,.faq{grid-template-columns:1fr;gap:12px;}
+.feature{min-height:220px;border-radius:22px;padding:22px;}
+.feature h3{font-size:21px;}
+.feature p{font-size:14px;}
+.gallery-grid img{height:240px;}
+.price{font-size:42px;}
 }
-
-/* ================= FLOAT ================= */
-
-.floating-contact{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-
-  z-index:120;
-}
-
-.float-btn{
-  width:56px;
-  height:56px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-family:"Inter",sans-serif;
-  font-size:13px;
-  font-weight:900;
-
-  color:#fff;
-
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
-}
-
-.float-tg{
-  background:#229ED9;
-}
-
-.float-max{
-  background:#274235;
-}
-
 </style>
 </head>
-
 <body>
 
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about">О кэмпе</a>
+<a href="#gallery">Галерея</a>
+<a href="#price">Стоимость</a>
+<a href="#faq">FAQ</a>
+</div>
+
 <header class="header">
-
-  <nav class="nav">
-
-    <a href="#">
-      <img class="logo-img" src="logo.png" alt="Padel Camp Suzdal">
-    </a>
-
-    <div class="nav-links">
-      <a href="#about">О кэмпе</a>
-      <a href="#program">Программа</a>
-      <a href="#hotel">Отель</a>
-      <a href="#gallery">Галерея</a>
-      <a href="#price">Стоимость</a>
-    </div>
-
-    <a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">
-      Забронировать
-    </a>
-
-  </nav>
-
+<nav class="nav">
+<a href="#">
+<img class="logo-img" src="logo.png" alt="Padel Camp Suzdal">
+</a>
+<div class="nav-links">
+<a href="#about">О кэмпе</a>
+<a href="#gallery">Галерея</a>
+<a href="#price">Стоимость</a>
+<a href="#faq">FAQ</a>
+</div>
+<a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Забронировать</a>
+<button class="mobile-menu-btn" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button>
+</nav>
 </header>
 
 <main>
 
 <section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="badge">
+<div class="badge-big">28 июня — 3 июля</div>
+<div class="ticker">
+<div class="ticker-track">
+<span>Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу ·</span>
+<span>Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу ·</span>
+</div>
+</div>
+</div>
 
-  <div class="container hero-grid">
+<h1>Падел-кэмп<br>в Суздале</h1>
 
-    <div>
+<p class="hero-text">
+5 дней падела, тренировок с тренером, вечерних матчей, SPA-программ, питания по системе шведский стол, проживания и отдыха в атмосфере Суздаля.
+</p>
 
-      <div class="badge">
+<div class="hero-actions">
+<a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Оставить заявку</a>
+<a class="btn btn-secondary" href="#about">Смотреть программу</a>
+</div>
+</div>
 
-        <div class="badge-big">
-          28 июня — 3 июля
-        </div>
-
-        <div class="ticker">
-
-          <div class="ticker-track">
-
-            <span>
-              Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу ·
-            </span>
-
-            <span>
-              Суздаль · SPA-отель · Игры с тренером · Турниры · 3-х разовое питание · Обзорная экскурсия по городу ·
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <h1>
-        Падел-кэмп<br>
-        в Суздале
-      </h1>
-
-      <p class="hero-text">
-        5 дней падела, тренировок с тренером,
-        вечерних матчей, SPA-программ,
-        питания по системе шведский стол,
-        проживания и отдыха в атмосфере Суздаля.
-      </p>
-
-      <div class="hero-actions">
-
-        <a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">
-          Оставить заявку
-        </a>
-
-        <a class="btn btn-secondary" href="#about">
-          Смотреть программу
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="hero-card">
-
-      <img src="images/padel/031.jpg" alt="Padel">
-
-      <div class="hero-card-content">
-
-        <h3>
-          Спорт, отдых и комьюнити
-        </h3>
-
-        <p>
-          Формат для тех, кто хочет прокачать игру,
-          отдохнуть от города и провести несколько насыщенных дней
-          в хорошей компании.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
+<div class="hero-card">
+<img src="images/padel/031.jpg" alt="Padel">
+<div class="hero-card-content">
+<h3>Спорт, отдых и комьюнити</h3>
+<p>Формат для тех, кто хочет прокачать игру, отдохнуть от города и провести несколько насыщенных дней в хорошей компании.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section id="about">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="eyebrow">Что входит</div>
+<h2>Кэмп, где падел — часть полноценного отдыха</h2>
+</div>
+<p class="section-text">Не просто турнир, а полноценная поездка: тренировки, игры, восстановление, питание, экскурсия и проживание на территории SPA-отеля.</p>
+</div>
 
-  <div class="container">
+<div class="features">
+<div class="feature f1"><h3>Тренировки с тренером</h3><p>Каждый день — занятие с тренером: техника, тактика и игровые связки.</p></div>
+<div class="feature f2"><h3>Игры и турнир</h3><p>Вечером — матчевые форматы, смена пар и турнирный вайб.</p></div>
+<div class="feature f3"><h3>SPA-комплекс</h3><p>Восстановление и отдых после игровых дней.</p></div>
+<div class="feature f4"><h3>Шведский стол</h3><p>3-х разовое питание уже включено в стоимость.</p></div>
+<div class="feature f5"><h3>Проживание</h3><p>Размещение на территории SPA-отеля.</p></div>
+<div class="feature f6"><h3>Экскурсия по Суздалю</h3><p>Обзорная автобусная экскурсия по городу.</p></div>
+</div>
+</div>
+</section>
 
-    <div class="section-head">
+<section id="gallery">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="eyebrow">Галерея</div>
+<h2>Атмосфера кэмпа</h2>
+</div>
+<p class="section-text">Падел, отдых, вечерние матчи, SPA и летний Суздаль.</p>
+</div>
 
-      <div>
+<div class="gallery-grid">
+<img src="images/padel/073.jpg" alt="">
+<img src="images/padel/078.jpg" alt="">
+<img src="images/padel/084.jpg" alt="">
+<img src="images/padel/132.jpg" alt="">
+<img src="images/padel/137.jpg" alt="">
+<img src="images/padel/163.jpg" alt="">
+</div>
+</div>
+</section>
 
-        <div class="eyebrow">
-          Что входит
-        </div>
+<section id="price">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="eyebrow">Стоимость</div>
+<h2>Варианты размещения</h2>
+</div>
+</div>
 
-        <h2>
-          Кэмп, где падел —
-          часть полноценного отдыха
-        </h2>
+<div class="price-grid">
+<div class="price-card">
+<h3>Двухместное размещение</h3>
+<div class="price">99 000 ₽</div>
+<ul>
+<li>Проживание</li>
+<li>Шведский стол</li>
+<li>Тренировки</li>
+<li>SPA-комплекс</li>
+<li>Турнир</li>
+</ul>
+<a class="btn btn-primary" href="https://t.me/zzzpeace" target="_blank">Забронировать</a>
+</div>
 
-      </div>
+<div class="price-card">
+<h3>Индивидуальное размещение</h3>
+<div class="price">119 000 ₽</div>
+<ul>
+<li>Отдельный номер</li>
+<li>Шведский стол</li>
+<li>Тренировки</li>
+<li>SPA-комплекс</li>
+<li>Турнир</li>
+</ul>
+<a class="btn btn-secondary" href="https://t.me/zzzpeace" target="_blank">Уточнить</a>
+</div>
+</div>
+</div>
+</section>
 
-      <p class="section-text">
-        Не просто турнир, а полноценная поездка:
-        тренировки, игры, восстановление,
-        питание, экскурсия и проживание
-        на территории SPA-отеля.
-      </p>
+<section id="faq">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="eyebrow">FAQ</div>
+<h2>Частые вопросы</h2>
+</div>
+</div>
 
-    </div>
-
-    <div class="features">
-
-      <div class="feature f1">
-        <h3>Тренировки с тренером</h3>
-        <p>
-          Каждый день — занятие с тренером:
-          техника, тактика и игровые связки.
-        </p>
-      </div>
-
-      <div class="feature f2">
-        <h3>Игры и турнир</h3>
-        <p>
-          Вечером — матчевые форматы,
-          смена пар и турнирный вайб.
-        </p>
-      </div>
-
-      <div class="feature f3">
-        <h3>SPA-комплекс</h3>
-        <p>
-          Восстановление и отдых
-          после игровых дней.
-        </p>
-      </div>
-
-      <div class="feature f4">
-        <h3>Шведский стол</h3>
-        <p>
-          3-х разовое питание уже
-          включено в стоимость.
-        </p>
-      </div>
-
-      <div class="feature f5">
-        <h3>Проживание</h3>
-        <p>
-          Размещение на территории
-          SPA-отеля.
-        </p>
-      </div>
-
-      <div class="feature f6">
-        <h3>Экскурсия по Суздалю</h3>
-        <p>
-          Обзорная автобусная экскурсия
-          по городу.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
+<div class="faq">
+<details><summary>Можно приехать одному?</summary><p>Да. Пары и группы формируются на месте.</p></details>
+<details><summary>Какой нужен уровень?</summary><p>Подходит любительский уровень игры.</p></details>
+<details><summary>Можно взять семью?</summary><p>Да, условия обсуждаются индивидуально.</p></details>
+<details><summary>Что входит в стоимость?</summary><p>Проживание, питание, тренировки, SPA и экскурсия.</p></details>
+</div>
+</div>
 </section>
 
 </main>
 
 <div class="floating-contact">
-
-  <a class="float-btn float-tg" href="https://t.me/zzzpeace" target="_blank">
-    TG
-  </a>
-
-  <a class="float-btn float-max" href="tel:+79064313752">
-    MAX
-  </a>
-
+<a class="float-btn float-tg" href="https://t.me/zzzpeace" target="_blank">TG</a>
+<a class="float-btn float-max" href="tel:+79064313752">MAX</a>
 </div>
+
+<script>
+function toggleMenu(){
+document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
+```
