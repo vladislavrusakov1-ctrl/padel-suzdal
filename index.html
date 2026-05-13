@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Padel Camp Suzdal</title>
 
@@ -72,10 +72,13 @@ img{
   border-radius:999px;
   background:rgba(255,255,255,.82);
   backdrop-filter:blur(18px);
+
   display:grid;
   grid-template-columns:190px 1fr 190px;
+
   align-items:center;
   gap:18px;
+
   box-shadow:0 12px 40px rgba(0,0,0,.06);
 }
 
@@ -89,10 +92,12 @@ img{
   display:flex;
   justify-content:center;
   gap:14px;
+
   font-family:"Inter",sans-serif;
   font-size:11px;
   font-weight:900;
   text-transform:uppercase;
+
   color:#3d4e46;
 }
 
@@ -100,14 +105,19 @@ img{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   padding:14px 20px;
+
   border-radius:999px;
   border:none;
+
   cursor:pointer;
+
   font-family:"Inter",sans-serif;
   font-size:12px;
   font-weight:900;
   text-transform:uppercase;
+
   transition:.2s ease;
 }
 
@@ -125,6 +135,7 @@ img{
 
 .hero{
   min-height:100vh;
+
   padding:145px 0 50px;
 
   background:
@@ -143,11 +154,17 @@ img{
 .badge{
   width:100%;
   max-width:560px;
+
   padding:15px 18px 12px;
+
   border-radius:24px;
+
   background:rgba(255,255,255,.82);
+
   box-shadow:0 10px 30px rgba(0,0,0,.06);
+
   margin-bottom:24px;
+
   overflow:hidden;
 }
 
@@ -155,8 +172,11 @@ img{
   font-family:"Inter",sans-serif;
   font-size:42px;
   font-weight:900;
+
   text-align:center;
+
   color:var(--green-dark);
+
   margin-bottom:10px;
 }
 
@@ -197,9 +217,12 @@ h1{
 
 .hero-text{
   max-width:620px;
+
   font-size:20px;
+
   color:#44534b;
   font-weight:600;
+
   margin-bottom:30px;
 }
 
@@ -283,13 +306,18 @@ h2{
 .feature{
   position:relative;
   min-height:280px;
+
   border-radius:28px;
   overflow:hidden;
+
   padding:24px;
+
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
+
   color:#fff;
+
   background-size:cover;
   background-position:center;
 }
@@ -298,6 +326,7 @@ h2{
   content:"";
   position:absolute;
   inset:0;
+
   background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.72));
 }
 
@@ -327,61 +356,110 @@ h2{
 
 @media(max-width:560px){
 
+  html,body{
+    overflow-x:hidden;
+  }
+
+  body{
+    width:100%;
+  }
+
   .container{
-    width:min(100% - 18px,1160px);
+    width:calc(100% - 18px);
+    max-width:100%;
   }
 
   .header{
     top:10px;
+    left:0;
+    right:0;
+    width:100%;
   }
 
   .nav{
     width:calc(100% - 18px);
+    max-width:100%;
+
+    margin:0 auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
     padding:10px 12px;
-    grid-template-columns:1fr auto;
+
+    border-radius:20px;
+
     gap:10px;
-    border-radius:22px;
   }
 
   .nav-links{
-    display:none;
+    display:none !important;
   }
 
   .logo-img{
-    width:128px;
+    width:122px;
     height:34px;
+    object-fit:contain;
+    flex-shrink:0;
   }
 
   .nav .btn{
+    width:auto;
+    flex-shrink:0;
+
     padding:11px 14px;
+
     font-size:9px;
+    line-height:1;
+
+    border-radius:999px;
   }
 
   .hero{
     min-height:auto;
-    padding:102px 0 30px;
+
+    padding-top:96px;
+    padding-bottom:26px;
+
+    overflow:hidden;
 
     background:
-    linear-gradient(180deg,rgba(246,240,229,.12),var(--bg) 98%),
-    linear-gradient(180deg,rgba(246,240,229,.92),rgba(246,240,229,.68),rgba(246,240,229,.38)),
+    linear-gradient(180deg,rgba(246,240,229,.08),var(--bg) 98%),
+    linear-gradient(180deg,rgba(246,240,229,.94),rgba(246,240,229,.72),rgba(246,240,229,.44)),
     url("images/hotel/XXL.jpeg") center 28%/cover no-repeat;
   }
 
   .hero-grid{
-    grid-template-columns:1fr;
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
     gap:18px;
   }
 
   .badge{
+    width:100%;
     max-width:100%;
+
     padding:12px 14px 10px;
+
     border-radius:18px;
+
     margin-bottom:18px;
   }
 
   .badge-big{
+    width:100%;
+
     font-size:24px;
     line-height:1;
+
+    text-align:center;
+
+    white-space:nowrap;
+
     margin-bottom:8px;
   }
 
@@ -390,38 +468,52 @@ h2{
   }
 
   h1{
+    width:100%;
+    max-width:100%;
+
     font-size:44px;
     line-height:.93;
+
     margin-bottom:16px;
   }
 
   .hero-text{
+    width:100%;
+    max-width:100%;
+
     font-size:15px;
     line-height:1.45;
+
     margin-bottom:20px;
   }
 
   .hero-actions{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
     width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
   }
 
   .hero-actions .btn{
     width:100%;
+
     padding:15px 16px;
+
     font-size:11px;
   }
 
   .hero-card{
     width:100%;
+    max-width:100%;
+
     border-radius:22px;
   }
 
   .hero-card img{
     width:100%;
-    height:240px;
+    height:230px;
     object-fit:cover;
   }
 
@@ -431,6 +523,7 @@ h2{
 
   .hero-card-content h3{
     font-size:22px;
+    margin-bottom:8px;
   }
 
   .hero-card-content p{
@@ -453,7 +546,11 @@ h2{
   }
 
   .section-text{
+    width:100%;
+    max-width:100%;
+
     margin-top:14px;
+
     font-size:15px;
   }
 
@@ -475,6 +572,48 @@ h2{
   .feature p{
     font-size:14px;
   }
+
+}
+
+/* ================= FLOAT ================= */
+
+.floating-contact{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  z-index:120;
+}
+
+.float-btn{
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:"Inter",sans-serif;
+  font-size:13px;
+  font-weight:900;
+
+  color:#fff;
+
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+
+.float-tg{
+  background:#229ED9;
+}
+
+.float-max{
+  background:#274235;
 }
 
 </style>
@@ -483,6 +622,7 @@ h2{
 <body>
 
 <header class="header">
+
   <nav class="nav">
 
     <a href="#">
@@ -502,6 +642,7 @@ h2{
     </a>
 
   </nav>
+
 </header>
 
 <main>
@@ -519,6 +660,7 @@ h2{
         </div>
 
         <div class="ticker">
+
           <div class="ticker-track">
 
             <span>
@@ -530,6 +672,7 @@ h2{
             </span>
 
           </div>
+
         </div>
 
       </div>
@@ -540,8 +683,9 @@ h2{
       </h1>
 
       <p class="hero-text">
-        5 дней падела, тренировок с тренером, вечерних матчей,
-        SPA-программ, питания по системе шведский стол,
+        5 дней падела, тренировок с тренером,
+        вечерних матчей, SPA-программ,
+        питания по системе шведский стол,
         проживания и отдыха в атмосфере Суздаля.
       </p>
 
@@ -590,12 +734,16 @@ h2{
     <div class="section-head">
 
       <div>
-        <div class="eyebrow">Что входит</div>
+
+        <div class="eyebrow">
+          Что входит
+        </div>
 
         <h2>
           Кэмп, где падел —
           часть полноценного отдыха
         </h2>
+
       </div>
 
       <p class="section-text">
@@ -664,6 +812,18 @@ h2{
 </section>
 
 </main>
+
+<div class="floating-contact">
+
+  <a class="float-btn float-tg" href="https://t.me/zzzpeace" target="_blank">
+    TG
+  </a>
+
+  <a class="float-btn float-max" href="tel:+79064313752">
+    MAX
+  </a>
+
+</div>
 
 </body>
 </html>
